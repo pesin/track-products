@@ -31,13 +31,8 @@ namespace AmazonProductAdvtApi
 {
     class ItemLookupSample
     {
-
-        /*Access Key ID:
-AKIAIOPB5UQ4TJQTUXTA
-Secret Access Key:
-*/
-        private const string MY_AWS_ACCESS_KEY_ID = "AKIAIOPB5UQ4TJQTUXTA";
-        private const string MY_AWS_SECRET_KEY    = "KxrMP+8FDazSJ/9KMNNpWti2ubBCIXn6OFFPTVeO";
+        private const string MY_AWS_ACCESS_KEY_ID = "YOUR_AWS_ACCESS_KEY_ID";
+        private const string MY_AWS_SECRET_KEY    = "YOUR_AWS_SECRET_KEY";
         private const string DESTINATION          = "ecs.amazonaws.com";
         
         private const string NAMESPACE = "http://webservices.amazon.com/AWSECommerceService/2009-03-31";
@@ -50,7 +45,7 @@ Secret Access Key:
             /*
              * The helper supports two forms of requests - dictionary form and query string form.
              */
-        String requestUrl;
+            String requestUrl;
             String title;
 
             /*

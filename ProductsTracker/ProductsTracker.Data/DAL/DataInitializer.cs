@@ -19,7 +19,7 @@ namespace ProductsTracker.Data.DAL
             context.SaveChanges();
             var stores = new List<OnlineStore>
             {
-            new OnlineStore{OnlineStoreID=1,Name="amazon.ca", SearchURL="",PriceRegex="",ProductRegex=""}
+            new OnlineStore{ID=1,Name="amazon.ca", SearchURL="https://www.amazon.ca/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=",PriceRegex="",ProductRegex=""}
             };
             stores.ForEach(s => context.OnlineStores.Add(s));
             context.SaveChanges();

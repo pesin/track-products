@@ -7,14 +7,8 @@ using System.Threading.Tasks;
 
 namespace ProductsTracker.Data
 {
- public   class OnlineStore: IStore
+ public   class OnlineStore: Store
     {
-        [Key]
-        public virtual int OnlineStoreID { get; set; }
-
-        [Required]
-        public virtual string Name { get; set; }
-
         [Required]
         public virtual string SearchURL { get; set; }
 
@@ -24,6 +18,6 @@ namespace ProductsTracker.Data
         [Required]
         public virtual string PriceRegex { get; set; }
 
-        public virtual ICollection<Product> Products { get; set; }
+        
     }
 }

@@ -1,0 +1,11 @@
+
+
+<h2 data-attribute="Octonauts 8-Figure Octo-Pack (Pack of 8)" class="a-size-medium a-color-null s-inline  s-access-title  a-text-normal">Octonauts 8-Figure Octo-Pack (Pack of 8)</h2>
+//*[@id="result_2"]/div/div/div/div[2]/div[2]/a/h2
+
+
+<span class="a-size-base a-color-price s-price a-text-bold">CDN$ 43.91</span>
+//*[@id="result_3"]/div/div/div/div[2]/div[3]/div[1]/div[2]/a/span
+
+
+<a class="a-link-normal s-access-detail-page  a-text-normal" title="Octonauts 8-Figure Octo-Pack (Pack of 8)" href="https://www.amazon.ca/Octonauts-8-Figure-Octo-Pack-Pack-8/dp/B00DMAFUDM/ref=sr_1_3?ie=UTF8&amp;qid=1468011890&amp;sr=8-3&amp;keywords=octonauts"><h2 data-attribute="Octonauts 8-Figure Octo-Pack (Pack of 8)" class="a-size-medium a-color-null s-inline  s-access-title  a-text-normal">Octonauts 8-Figure Octo-Pack (Pack of 8)</h2></a>

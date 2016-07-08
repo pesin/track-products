@@ -18,6 +18,7 @@ namespace ProductsTracker.Data.DAL
         public DbSet<User> Users { get; set; }
         public DbSet<OnlineStore> OnlineStores { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Store> Stores { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
