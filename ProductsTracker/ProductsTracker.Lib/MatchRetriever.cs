@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProductsTracker.Data
+namespace ProductsTracker.Lib
 {
-   public  class AmamzonStore:Store
+   public class MatchRetriever
     {
-
     }
 }

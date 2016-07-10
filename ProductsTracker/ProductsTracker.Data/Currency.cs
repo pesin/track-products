@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace ProductsTracker.Data
 {
-    enum Currency
+    public enum Currency
     {
         CAD=0,
-        USD
+        USD,
+        EUR
     }
 }

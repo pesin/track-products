@@ -7,17 +7,28 @@ using System.Threading.Tasks;
 
 namespace ProductsTracker.Data
 {
- public   class OnlineStore: Store
+ public class OnlineStore: Store
     {
         [Required]
         public virtual string SearchURL { get; set; }
 
         [Required]
-        public virtual string ProductRegex { get; set; }
+        public virtual string Regex { get; set; }
+        [Required]
+        public virtual string ProductRegexGroupName { get; set; }
 
         [Required]
-        public virtual string PriceRegex { get; set; }
+        public virtual string ProductURLRegexGroupName { get; set; }
 
-        
+        [Required]
+        public virtual string PriceRegexGroupName { get; set; }
+
+       
+        public virtual string PriceRegexCurrencyName { get; set; }
+
+        public override IEnumerable<ProductMatch> retrieveMatches()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

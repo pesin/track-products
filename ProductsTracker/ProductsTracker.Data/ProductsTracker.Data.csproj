@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ProductsTracker.Data</RootNamespace>
     <AssemblyName>ProductsTracker.Data</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,11 +50,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="APIStore.cs" />
     <Compile Include="Currency.cs" />
     <Compile Include="DAL\DataContext.cs" />
     <Compile Include="DAL\DataInitializer.cs" />
     <Compile Include="IStore.cs" />
+    <Compile Include="Migrations\201607092257365_a.cs" />
+    <Compile Include="Migrations\201607092257365_a.Designer.cs">
+      <DependentUpon>201607092257365_a.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OnlineStore.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductMatch.cs" />
@@ -63,6 +68,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201607092257365_a.resx">
+      <DependentUpon>201607092257365_a.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

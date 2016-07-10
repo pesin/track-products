@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProductsTracker.Data
 {
-    class ProductMatch
+    public class ProductMatch
     {
         public virtual int ProductMatchID { get; set; }
         public virtual DateTime RetrievedOn { get; set; }

@@ -25,6 +25,7 @@ namespace ProductsTracker.Data
         public virtual User User { get; set; }
 
         public virtual ICollection<OnlineStore> OnlineStores { get; set; }
-        
+        public virtual ICollection<ProductMatch> ProductMatches { get; set; }
+
     }
 }

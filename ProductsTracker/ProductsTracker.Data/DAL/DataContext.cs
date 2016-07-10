@@ -19,7 +19,8 @@ namespace ProductsTracker.Data.DAL
         public DbSet<OnlineStore> OnlineStores { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Store> Stores { get; set; }
-
+        public DbSet<ProductMatch> ProductMatches { get; set; }
+       
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

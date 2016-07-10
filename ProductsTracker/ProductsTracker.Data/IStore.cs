@@ -14,5 +14,7 @@ namespace ProductsTracker.Data
         public  string Name { get; set; }
 
         public  ICollection<Product> Products { get; set; }
+
+        public abstract IEnumerable<ProductMatch> retrieveMatches();
     }
 }
