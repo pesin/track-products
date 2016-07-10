@@ -1,0 +1,14 @@
+/ProductsTracker/ProductsTracker.Data/bin/Debug
+/ProductsTracker/ProductsTracker.Lib/bin/Debug/*.dll
+/ProductsTracker/ProductsTracker.Lib/obj/Debug/*.dll
+*.dll
+Debug
+*.mdf
+*.ldf
+*.pdb
+Antlr.3.4.1.9004
+Microsoft.AspNet.Identity.Core.2.2.1
+bin
+EntityFramework.6.1.3
+/ProductsTracker/packages
+obj
