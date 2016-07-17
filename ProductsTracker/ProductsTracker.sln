@@ -28,6 +28,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{0152B65E-7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsTracker.Web4", "ProductsTracker.Web4\ProductsTracker.Web4.csproj", "{F6810EAE-0C72-4D10-8C48-EC2967CB70F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsTracker.Lib.Tests", "ProductsTracker.Lib.Tests\ProductsTracker.Lib.Tests.csproj", "{4C366D59-EDE7-44D1-93AC-598FD4565BB3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,10 @@ Global
 		{F6810EAE-0C72-4D10-8C48-EC2967CB70F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6810EAE-0C72-4D10-8C48-EC2967CB70F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6810EAE-0C72-4D10-8C48-EC2967CB70F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C366D59-EDE7-44D1-93AC-598FD4565BB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C366D59-EDE7-44D1-93AC-598FD4565BB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C366D59-EDE7-44D1-93AC-598FD4565BB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C366D59-EDE7-44D1-93AC-598FD4565BB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
