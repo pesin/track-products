@@ -16,6 +16,9 @@ namespace ProductsTracker.Lib
     {
         public IEnumerable<ProductMatch> getResults(Product product, Store store)
         {
+
+            throw new NotImplementedException();
+
             if (!(store is OnlineStore))
             {
                 throw new NotImplementedException();

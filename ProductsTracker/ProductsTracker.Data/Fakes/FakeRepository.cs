@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ProductsTracker.Data.Fakes
 {
 
-    public class FakeDBSet<TEntity>: DbSet<TEntity> where TEntity : class
+    public class FakeDBSet<TEntity>: DbSet<TEntity> where TEntity : class,new()
     {
         private List<TEntity> list;
         
@@ -19,17 +19,23 @@ namespace ProductsTracker.Data.Fakes
 
         public override TEntity Add(TEntity entity)
         {
-            return base.Add(entity);
+             list.Add(entity);
+            return entity;
         }
+
+        
 
         public override TEntity Create()
         {
-            return base.Create();
+            TEntity entity = new TEntity();
+            return this.Add(entity);
+
         }
 
         public override TEntity Remove(TEntity entity)
         {
-            return base.Remove(entity);
+             list.Remove(entity);
+            return entity;
         }
 
        

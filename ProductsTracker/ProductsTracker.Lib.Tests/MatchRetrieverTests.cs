@@ -28,7 +28,8 @@ namespace ProductsTracker.Lib.Tests
                 Manifacturer = "f",
                 Name = "Octopod",
                 ProductID = 1,
-                UserID = 1
+                UserID = 1,
+                 OnlineStores=new List<OnlineStore>()
             };
             repository.Products.Add(p);
         }
@@ -39,6 +40,24 @@ namespace ProductsTracker.Lib.Tests
            
             mr.retrieveMatches(p);
             Assert.Inconclusive();
+        }
+
+        [TestMethod()]
+        [ExpectedException(typeof( ArgumentNullException))]
+        public void retrieveMatchesProductIsNullTest()
+        {
+
+            mr.retrieveMatches(null);
+           
+        }
+
+
+        [TestMethod()]
+        public void retrieveMatchesNoStoresTest()
+        {
+
+          var matches=  mr.retrieveMatches(p);
+            Assert.AreEqual(0,matches.Count());
         }
     }
 }
