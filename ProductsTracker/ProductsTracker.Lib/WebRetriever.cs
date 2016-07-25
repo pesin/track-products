@@ -37,6 +37,24 @@ namespace ProductsTracker.Lib
                     string result = reader.ReadToEnd();
                     //parse
                     Regex regex = new Regex( oStore.Regex);
+
+                    MatchCollection matches = regex.Matches(result);
+                    foreach(Match m in matches)
+                    {
+                        ProductMatch pm = new ProductMatch();
+
+                        pm.RetrievedOn = DateTime.Now;
+                        pm.MatchedName = m.Groups[oStore.ProductRegexGroupName].ToString();
+                        pm.MatchURL = m.Groups[oStore.ProductURLRegexGroupName].ToString();
+                        double d = -1.0;
+                        if (Double.TryParse(m.Groups[oStore.PriceRegexGroupName].ToString(), out d))
+                        {
+                            pm.Price = d;
+                        }
+
+
+
+                    }
                 }
 
             }

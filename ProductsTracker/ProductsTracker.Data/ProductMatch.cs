@@ -14,7 +14,8 @@ namespace ProductsTracker.Data
         public virtual Currency Currency { get; set; }
         public virtual Product Product { get; set; }
         public virtual int ProductID { get; set; }
-
+        public virtual string MatchedName { get; set; }
+        public virtual string MatchURL { get; set; }
 
     }
 }
