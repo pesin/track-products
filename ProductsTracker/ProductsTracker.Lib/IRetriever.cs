@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProductsTracker.Lib
 {
-    interface IRetriever
+  public  interface IRetriever
     {
         IEnumerable<ProductMatch> getResults(Product product, Store store);
     }

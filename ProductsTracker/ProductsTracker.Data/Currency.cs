@@ -10,6 +10,7 @@ namespace ProductsTracker.Data
     {
         CAD=0,
         USD,
-        EUR
+        EUR,
+
     }
 }

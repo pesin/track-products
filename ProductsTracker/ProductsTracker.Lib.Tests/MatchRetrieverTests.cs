@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using ProductsTracker.Data;
 using ProductsTracker.Data.Fakes;
 using ProductsTracker.Lib;
@@ -22,6 +23,20 @@ namespace ProductsTracker.Lib.Tests
         {
             repository = new FakeRepository();
             mr = new Runner(repository);
+            OnlineStore store = new OnlineStore()
+            {
+                ID = 1,
+                Name = "amazon",
+                Regex = @".*",
+                PriceRegexCurrencyName = "a",
+                PriceRegexGroupName = "b",
+                ProductRegexGroupName = "c",
+                ProductURLRegexGroupName = "w",
+                SearchURL = "aaaaaaa",
+                Products = new List<Product>()
+            };
+            repository.OnlineStores.Add(store);
+
             p = new Product()
             {
                 isActive = true,
@@ -31,15 +46,32 @@ namespace ProductsTracker.Lib.Tests
                 UserID = 1,
                  OnlineStores=new List<OnlineStore>()
             };
+
+            p.OnlineStores.Add(store);
+            store.Products.Add(p);
             repository.Products.Add(p);
+            List<ProductMatch> matches = new List<ProductMatch>();
+            matches.Add(new ProductMatch()
+            {
+                Currency = Currency.CAD,
+                RetrievedOn = DateTime.Now,
+                MatchedName = "octopod",
+                MatchURL = "aa",
+                Price = 40.0,
+                Product = p,
+                ProductID = p.ProductID,
+                ProductMatchID = 1
+            });
+            var mock = new Mock<IRetriever>();
+            mock.Setup(foo => foo.getResults(p,store)).Returns(matches);
         }
 
         [TestMethod()]
         public void retrieveMatchesTest()
         {
            
-            mr.retrieveMatches(p);
-            Assert.Inconclusive();
+          var actual=  mr.retrieveMatches(p);
+            Assert.AreEqual(1,actual.Count());
         }
 
         [TestMethod()]

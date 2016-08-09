@@ -21,7 +21,22 @@ namespace ProductsTracker.Lib
         }
         public IEnumerable<ProductMatch> retrieveMatches(Product product)
         {
-            throw new NotImplementedException();
+            if (product == null)
+            {
+                throw new ArgumentNullException("product");
+
+            }
+
+            List<ProductMatch> retval = new List<ProductMatch>();
+            WebRetriever wb = new WebRetriever();
+            foreach (var store in product.OnlineStores)
+            {
+                var matches = wb.getResults(product, store);
+                retval.AddRange(matches);
+                this.repository.ProductMatches.AddRange(matches);
+            }
+
+            return retval;
         }
     }
 }

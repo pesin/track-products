@@ -17,7 +17,9 @@ namespace ProductsTracker.Lib
         public IEnumerable<ProductMatch> getResults(Product product, Store store)
         {
 
-            throw new NotImplementedException();
+            //            throw new NotImplementedException();
+
+            List<ProductMatch> retval = new List<ProductMatch>();
 
             if (!(store is OnlineStore))
             {
@@ -34,33 +36,40 @@ namespace ProductsTracker.Lib
                 response = request.GetResponse();
                 using (var reader = new StreamReader(response.GetResponseStream()))
                 {
+
                     string result = reader.ReadToEnd();
                     //parse
-                    Regex regex = new Regex( oStore.Regex);
+                    Regex regex = new Regex(oStore.Regex);
 
                     MatchCollection matches = regex.Matches(result);
-                    foreach(Match m in matches)
+                    foreach (Match m in matches)
                     {
                         ProductMatch pm = new ProductMatch();
+                        pm.ProductID = product.ProductID;
 
                         pm.RetrievedOn = DateTime.Now;
-                        pm.MatchedName = m.Groups[oStore.ProductRegexGroupName].ToString();
-                        pm.MatchURL = m.Groups[oStore.ProductURLRegexGroupName].ToString();
+                        pm.MatchedName = m.Groups[oStore.ProductRegexGroupName].Value;
+                        pm.MatchURL = m.Groups[oStore.ProductURLRegexGroupName].Value;
                         double d = -1.0;
-                        if (Double.TryParse(m.Groups[oStore.PriceRegexGroupName].ToString(), out d))
+                        if (Double.TryParse(m.Groups[oStore.PriceRegexGroupName].Value, out d))
                         {
                             pm.Price = d;
                         }
+                        Currency currency = Currency.CAD;
+                        if (Enum.TryParse<Currency>(m.Groups[oStore.PriceRegexCurrencyName].Value, true, out currency))
+                        {
+                            pm.Currency = currency;
+                        }
 
-
+                        retval.Add(pm);
 
                     }
                 }
 
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                (new LogFactory()).GetLogger(this.GetType().ToString()).Error( e, oStore.ToString());
+                (new LogFactory()).GetLogger(this.GetType().ToString()).Error(e, oStore.ToString());
             }
             finally
             {
@@ -69,6 +78,8 @@ namespace ProductsTracker.Lib
                     response.Close();
                 }
             }
+
+            return retval;
         }
     }
 }
