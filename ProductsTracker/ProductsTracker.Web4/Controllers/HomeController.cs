@@ -26,5 +26,12 @@ namespace ProductsTracker.Web4.Controllers
 
             return View();
         }
+
+        [Authorize]
+        public ActionResult Products()
+        {
+
+            return View();
+        }
     }
 }
