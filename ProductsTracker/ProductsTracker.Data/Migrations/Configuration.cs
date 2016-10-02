@@ -13,6 +13,38 @@ namespace ProductsTracker.Data.Migrations
             AutomaticMigrationsEnabled = true;
         }
 
+
+        private void LookupDataInit(DAL.DataContext context)
+        {
+            var rules = new List<ParserRule>()
+            {
+                new ParserRule()
+                {
+                   
+                    type=ParserRuleType.ProductContainer,
+                    XPath = @"//a[contains(@id,'product')]"
+                },
+                 new ParserRule()
+                {
+                   
+                    type=ParserRuleType.ProductContainer,
+                    XPath = @"//a[contains(@id,'result')]"
+                },
+                  new ParserRule()
+                {
+
+                    type=ParserRuleType.ProductContainer,
+                    XPath = @"//a[contains(@class,'product')]"
+                },
+                new ParserRule()
+                {
+
+                    type=ParserRuleType.ProductContainer,
+                    XPath = @"//a[contains(@id,'product')]"
+                },
+            };
+        }
+
         protected override void Seed(ProductsTracker.Data.DAL.DataContext context)
         {
             //  This method will be called after migrating to the latest version.

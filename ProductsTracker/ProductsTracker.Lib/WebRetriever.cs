@@ -14,6 +14,9 @@ namespace ProductsTracker.Lib
 {
     class WebRetriever : IRetriever
     {
+
+
+
         public IEnumerable<ProductMatch> getResults(Product product, Store store)
         {
 
