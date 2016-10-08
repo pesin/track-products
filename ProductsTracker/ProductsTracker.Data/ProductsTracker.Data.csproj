@@ -62,6 +62,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OnlineStore.cs" />
+    <Compile Include="ParserRules.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductMatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
